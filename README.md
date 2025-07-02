@@ -1,2 +1,2 @@
 # Sanaya
-Online Education Technoly hub.
+Online Education platform with innovation and technology.
