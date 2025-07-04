@@ -1,20 +1,11 @@
 import { configureStore } from "@reduxjs/toolkit";
 import { TypedUseSelectorHook, useDispatch, useSelector } from "react-redux";
-//import storage from 'redux-persist/lib/storage';
-import { persistReducer, persistStore } from 'redux-persist';
-import authReducer from "@/src/features/auth/authSlice";
-import userReducer from "@/src/features/user/userSlice";
-// import appStateReducer from '../features/appState/appStateSlice';
-// import courseReducer from '../features/course/courseSlice';
-// import quizReducer from '../features/quiz/quizSlice';
+import { persistStore } from 'redux-persist';
+import persistedReducer from '../reducers';
 
 export const store = configureStore({
   reducer: {
-    auth: authReducer,
-    user: userReducer,
-    // appState: appStateReducer,
-    // course: courseReducer,
-    // quiz: quizReducer,
+    rootReducer: persistedReducer
   },
   middleware: (getDefaultMiddleware) =>
     getDefaultMiddleware({

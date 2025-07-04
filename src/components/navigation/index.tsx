@@ -5,7 +5,7 @@ import Image from 'next/image';
 import { usePathname } from 'next/navigation';
 import React, { useState } from 'react';
 import { navItems, authButtonStyles } from '@/src/constants/navConstants';
-import logoImage from '@/src/resources/icons/osb_logo.png';
+import logoImage from '@/src/resources/icons/logo.jpg';
 
 const Navbar = () => {
   const pathname = usePathname();

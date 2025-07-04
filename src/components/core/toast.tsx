@@ -1,7 +1,5 @@
 import React, { useEffect } from 'react';
-import { useAppSelector, useAppDispatch } from '@/src/hooks';
-// import { useDispatch, useSelector } from 'react-redux';
-import { RootState } from '@/src/store';
+import { RootState, useAppSelector, useAppDispatch } from '@/src/store';
 import { removeMessage } from '@/src/reducers/messageSlice';
 
 const Toast: React.FC = () => {

@@ -1,6 +1,5 @@
 import React from 'react';
-import { useAppDispatch, useAppSelector } from '@/src/hooks';
-import { RootState } from '@/src/store';
+import { RootState, useAppDispatch, useAppSelector } from '@/src/store';
 import { closeConfirmation } from '@/src/reducers/confirmationSlice';
 
 const ConfirmationDialog: React.FC = () => {
