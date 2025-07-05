@@ -38,6 +38,7 @@
     "@radix-ui/react-toggle-group": "^1.1.10",
     "@radix-ui/react-tooltip": "^1.2.7",
     "@reduxjs/toolkit": "^2.8.2",
+    "@tanstack/react-query": "^5.81.5",
     "axios": "^1.10.0",
     "chance": "^1.1.13",
     "class-variance-authority": "^0.7.1",
@@ -57,7 +58,8 @@
     "redux-thunk": "^3.1.0",
     "tailwind-merge": "^3.3.1",
     "validate.js": "^0.13.1",
-    "vaul": "^1.1.2"
+    "vaul": "^1.1.2",
+    "wouter": "^3.7.1"
   },
   "devDependencies": {
     "@tailwindcss/postcss": "^4",
