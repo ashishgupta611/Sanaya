@@ -2,7 +2,9 @@ import React from 'react';
 import { RootState, useAppSelector } from '@/src/store';
 
 const LoadingOverlay: React.FC = () => {
-  const { isLoading, loadingText } = useAppSelector((state: RootState) => state.rootReducer.loading);
+  const { isLoading, loadingText } = useAppSelector(
+    (state: RootState) => state.rootReducer.loading,
+  );
   if (!isLoading) return null;
 
   return (

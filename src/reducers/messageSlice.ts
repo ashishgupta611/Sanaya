@@ -26,7 +26,7 @@ export const messageSlice = createSlice({
       state.messages.push(newMessage);
     },
     removeMessage: (state, action: PayloadAction<string>) => {
-      state.messages = state.messages.filter(msg => msg.id !== action.payload);
+      state.messages = state.messages.filter((msg) => msg.id !== action.payload);
     },
     clearMessages: (state) => {
       state.messages = [];

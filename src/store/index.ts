@@ -1,5 +1,5 @@
-import { configureStore } from "@reduxjs/toolkit";
-import { TypedUseSelectorHook, useDispatch, useSelector } from "react-redux";
+import { configureStore } from '@reduxjs/toolkit';
+import { TypedUseSelectorHook, useDispatch, useSelector } from 'react-redux';
 import { persistStore } from 'redux-persist';
 import confirmationreducer from '../reducers/confirmationSlice';
 import persistedReducer from '../reducers';
@@ -7,13 +7,13 @@ import persistedReducer from '../reducers';
 export const store = configureStore({
   reducer: {
     rootReducer: persistedReducer,
-    confirmation: confirmationreducer
+    confirmation: confirmationreducer,
   },
   middleware: (getDefaultMiddleware) =>
     getDefaultMiddleware({
       serializableCheck: {
         // Ignore these action types
-        ignoredActions: ["persist/PERSIST", "persist/REHYDRATE"],
+        ignoredActions: ['persist/PERSIST', 'persist/REHYDRATE'],
       },
     }),
 });

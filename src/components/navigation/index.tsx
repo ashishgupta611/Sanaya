@@ -15,31 +15,46 @@ const Navbar = () => {
   const selectedStyle = authButtonStyles.minimal;
 
   const logoComponent = () => {
-    return <Link href="/" className="flex items-center">
-      <Image src={logoImage}
-        className="rounded-full"
-        alt="TaskManager Logo"
-        width={50}
-        height={50}
-        priority />
-    </Link>;
+    return (
+      <Link href="/" className="flex items-center">
+        <Image
+          src={logoImage}
+          className="rounded-full"
+          alt="TaskManager Logo"
+          width={50}
+          height={50}
+          priority
+        />
+      </Link>
+    );
   };
 
   const authButtons = () => {
-    return <div className="flex items-center space-x-4 ml-6 border-l border-gray-200 pl-6">
-      <Link
-        href="/login"
-        className={`${selectedStyle} ${pathname === '/login'
-          ? 'bg-blue-100 text-blue-700 border-blue-300'
-          : 'text-blue-600 border-blue-200 hover:bg-blue-50'
-          }`}> Login </Link>
-      <Link
-        href="/register"
-        className={`${selectedStyle} ${pathname === '/register'
-          ? 'bg-blue-100 text-blue-700 border-blue-300'
-          : 'text-blue-600 border-blue-200 hover:bg-blue-50'
-          }`}>Register</Link>
-    </div>
+    return (
+      <div className="flex items-center space-x-4 ml-6 border-l border-gray-200 pl-6">
+        <Link
+          href="/login"
+          className={`${selectedStyle} ${
+            pathname === '/login'
+              ? 'bg-blue-100 text-blue-700 border-blue-300'
+              : 'text-blue-600 border-blue-200 hover:bg-blue-50'
+          }`}
+        >
+          {' '}
+          Login{' '}
+        </Link>
+        <Link
+          href="/register"
+          className={`${selectedStyle} ${
+            pathname === '/register'
+              ? 'bg-blue-100 text-blue-700 border-blue-300'
+              : 'text-blue-600 border-blue-200 hover:bg-blue-50'
+          }`}
+        >
+          Register
+        </Link>
+      </div>
+    );
   };
 
   return (
@@ -60,10 +75,11 @@ const Navbar = () => {
                 >
                   <Link
                     href={item.path}
-                    className={`px-3 py-2 rounded-md text-sm font-medium transition-colors ${pathname === item.path
-                      ? 'bg-blue-500 text-white'
-                      : 'text-gray-700 hover:bg-gray-100'
-                      }`}
+                    className={`px-3 py-2 rounded-md text-sm font-medium transition-colors ${
+                      pathname === item.path
+                        ? 'bg-blue-500 text-white'
+                        : 'text-gray-700 hover:bg-gray-100'
+                    }`}
                   >
                     {item.name}
                   </Link>

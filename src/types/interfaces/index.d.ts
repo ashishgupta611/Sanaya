@@ -1,6 +1,6 @@
 export interface ConfirmationDialog extends ConfirmationProps {
   isOpen: boolean;
-};
+}
 
 export interface ConfirmationProps {
   title: string;
@@ -9,4 +9,4 @@ export interface ConfirmationProps {
   // onCancel?: () => void;
   confirmText?: string;
   cancelText?: string;
-};
+}

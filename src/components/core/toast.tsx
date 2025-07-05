@@ -24,16 +24,17 @@ const Toast: React.FC = () => {
         <div
           key={message.id}
           className={`px-4 py-2 rounded-md shadow-lg text-white ${
-            message.type === 'success' ? 'bg-green-500' :
-            message.type === 'error' ? 'bg-red-500' :
-            message.type === 'warning' ? 'bg-yellow-500' : 'bg-blue-500'
+            message.type === 'success'
+              ? 'bg-green-500'
+              : message.type === 'error'
+                ? 'bg-red-500'
+                : message.type === 'warning'
+                  ? 'bg-yellow-500'
+                  : 'bg-blue-500'
           }`}
         >
           {message.text}
-          <button
-            onClick={() => dispatch(removeMessage(message.id))}
-            className="ml-2"
-          >
+          <button onClick={() => dispatch(removeMessage(message.id))} className="ml-2">
             ×
           </button>
         </div>

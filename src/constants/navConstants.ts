@@ -1,9 +1,9 @@
 export const navItems = [
-  { name: "Home", path: "/" },
-  { name: "About", path: "/about" },
-  { name: "ContactUs", path: "/contact-us" },
-  { name: "Community", path: "/community" },
-  { name: "News", path: "/news" },
+  { name: 'Home', path: '/' },
+  { name: 'About', path: '/about' },
+  { name: 'ContactUs', path: '/contact-us' },
+  { name: 'Community', path: '/community' },
+  { name: 'News', path: '/news' },
 ];
 
 // Style options for auth buttons - choose one
