@@ -8,21 +8,21 @@ const ConfirmationDialog: React.FC = () => {
     isOpen,
     title,
     message,
-    onConfirm,
-    onCancel,
+    // onConfirm,
+    // onCancel,
     confirmText,
     cancelText,
-  } = useAppSelector((state: RootState) => state.rootReducer.confirmation);
+  } = useAppSelector((state: RootState) => state.confirmation);
 
   if (!isOpen) return null;
 
   const handleConfirm = () => {
-    onConfirm();
+    // onConfirm();
     dispatch(closeConfirmation());
   };
 
   const handleCancel = () => {
-    if (onCancel) onCancel();
+    // if (onCancel) onCancel();
     dispatch(closeConfirmation());
   };
 

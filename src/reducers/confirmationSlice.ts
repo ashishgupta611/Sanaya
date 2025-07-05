@@ -5,7 +5,7 @@ const initialState: ConfirmationDialog = {
   isOpen: false,
   title: 'Are you sure?',
   message: 'This action cannot be undone.',
-  onConfirm: () => {},
+  // onConfirm: () => {},
   confirmText: 'Confirm',
   cancelText: 'Cancel',
 };

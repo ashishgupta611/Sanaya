@@ -1,11 +1,13 @@
 import { configureStore } from "@reduxjs/toolkit";
 import { TypedUseSelectorHook, useDispatch, useSelector } from "react-redux";
 import { persistStore } from 'redux-persist';
+import confirmationreducer from '../reducers/confirmationSlice';
 import persistedReducer from '../reducers';
 
 export const store = configureStore({
   reducer: {
-    rootReducer: persistedReducer
+    rootReducer: persistedReducer,
+    confirmation: confirmationreducer
   },
   middleware: (getDefaultMiddleware) =>
     getDefaultMiddleware({
