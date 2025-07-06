@@ -1,7 +1,7 @@
-import { useRef, useEffect, useState } from "react";
-import { Button } from "@/src/components/ui/button";
-import { Slider } from "@/src/components/ui/slider";
-import { Play, Pause, Volume2, VolumeX, Maximize, Minimize } from "lucide-react";
+import { useRef, useEffect, useState } from 'react';
+import { Button } from '@/src/components/ui/button';
+import { Slider } from '@/src/components/ui/slider';
+import { Play, Pause, Volume2, VolumeX, Maximize, Minimize } from 'lucide-react';
 
 interface VideoPlayerProps {
   src: string;
@@ -38,14 +38,14 @@ export default function VideoPlayer({ src, poster, onProgress, onEnded }: VideoP
       onEnded?.();
     };
 
-    video.addEventListener("timeupdate", handleTimeUpdate);
-    video.addEventListener("loadedmetadata", handleLoadedMetadata);
-    video.addEventListener("ended", handleEnded);
+    video.addEventListener('timeupdate', handleTimeUpdate);
+    video.addEventListener('loadedmetadata', handleLoadedMetadata);
+    video.addEventListener('ended', handleEnded);
 
     return () => {
-      video.removeEventListener("timeupdate", handleTimeUpdate);
-      video.removeEventListener("loadedmetadata", handleLoadedMetadata);
-      video.removeEventListener("ended", handleEnded);
+      video.removeEventListener('timeupdate', handleTimeUpdate);
+      video.removeEventListener('loadedmetadata', handleLoadedMetadata);
+      video.removeEventListener('ended', handleEnded);
     };
   }, [onProgress, onEnded]);
 
@@ -106,7 +106,7 @@ export default function VideoPlayer({ src, poster, onProgress, onEnded }: VideoP
   const formatTime = (time: number) => {
     const minutes = Math.floor(time / 60);
     const seconds = Math.floor(time % 60);
-    return `${minutes}:${seconds.toString().padStart(2, "0")}`;
+    return `${minutes}:${seconds.toString().padStart(2, '0')}`;
   };
 
   const progressPercentage = duration > 0 ? (currentTime / duration) * 100 : 0;
@@ -116,7 +116,10 @@ export default function VideoPlayer({ src, poster, onProgress, onEnded }: VideoP
     return (
       <div className="relative aspect-video bg-black rounded-lg overflow-hidden">
         <img
-          src={poster || "https://images.unsplash.com/photo-1516321318423-f06f85e504b3?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&h=450"}
+          src={
+            poster ||
+            'https://images.unsplash.com/photo-1516321318423-f06f85e504b3?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&h=450'
+          }
           alt="Video preview"
           className="w-full h-full object-cover"
         />
@@ -158,8 +161,11 @@ export default function VideoPlayer({ src, poster, onProgress, onEnded }: VideoP
       )}
 
       {/* Controls */}
-      <div className={`absolute bottom-0 left-0 right-0 bg-gradient-to-t from-black to-transparent p-4 transition-opacity duration-200 ${showControls ? 'opacity-100' : 'opacity-0'
-        }`}>
+      <div
+        className={`absolute bottom-0 left-0 right-0 bg-gradient-to-t from-black to-transparent p-4 transition-opacity duration-200 ${
+          showControls ? 'opacity-100' : 'opacity-0'
+        }`}
+      >
         {/* Progress Bar */}
         <div className="mb-4">
           <Slider

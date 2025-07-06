@@ -1,4 +1,4 @@
-'use client'
+'use client';
 
 import React, { ReactNode, useState } from 'react';
 import { Provider } from 'react-redux';
@@ -8,16 +8,16 @@ import Toast from '@/src/components/core/toast';
 import LoadingOverlay from '@/src//components/core/loadingOverlay';
 import ConfirmationDialog from '@/src//components/core/confirmationDialog';
 import { QueryClient, QueryClientProvider } from '@tanstack/react-query';
-import { TooltipProvider } from "@/src/components/ui/tooltip";
+import { TooltipProvider } from '@/src/components/ui/tooltip';
 import { Toaster } from '../ui/toaster';
 
 const ReduxProvider = ({ children }: Readonly<{ children: ReactNode }>) => {
   const [queryClient] = useState(() => new QueryClient());
 
   return (
-    <QueryClientProvider client={queryClient}>
-      <Provider store={store}>
-        <PersistGate loading={null} persistor={persistor}>
+    <Provider store={store}>
+      <PersistGate loading={null} persistor={persistor}>
+        <QueryClientProvider client={queryClient}>
           {children}
           <Toast />
           <LoadingOverlay />
@@ -25,9 +25,9 @@ const ReduxProvider = ({ children }: Readonly<{ children: ReactNode }>) => {
           <TooltipProvider>
             <Toaster />
           </TooltipProvider>
-        </PersistGate>
-      </Provider>
-    </QueryClientProvider>
+        </QueryClientProvider>
+      </PersistGate>
+    </Provider>
   );
 };
 

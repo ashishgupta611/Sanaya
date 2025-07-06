@@ -1,6 +1,6 @@
-import { Card, CardContent } from "@/src/components/ui/card";
-import { RadioGroup, RadioGroupItem } from "@/src/components/ui/radio-group";
-import { Label } from "@/src/components/ui/label";
+import { Card, CardContent } from '@/src/components/ui/card';
+import { RadioGroup, RadioGroupItem } from '@/src/components/ui/radio-group';
+import { Label } from '@/src/components/ui/label';
 
 interface QuizQuestionProps {
   question: {
@@ -20,14 +20,12 @@ export default function QuizQuestion({
   selectedAnswer,
   onAnswerSelect,
   showExplanation = false,
-  correctAnswer
+  correctAnswer,
 }: QuizQuestionProps) {
   return (
     <Card>
       <CardContent className="p-6">
-        <h2 className="text-xl font-semibold text-gray-900 mb-6">
-          {question.question}
-        </h2>
+        <h2 className="text-xl font-semibold text-gray-900 mb-6">{question.question}</h2>
 
         <RadioGroup
           value={selectedAnswer.toString()}
@@ -43,14 +41,15 @@ export default function QuizQuestion({
                 <div key={index}>
                   <Label
                     htmlFor={`option-${index}`}
-                    className={`flex items-center p-4 border-2 rounded-xl cursor-pointer transition duration-200 ${isCorrect
-                      ? 'border-success bg-green-50'
-                      : isWrong
-                        ? 'border-red-500 bg-red-50'
-                        : isSelected
-                          ? 'border-primary bg-blue-50'
-                          : 'border-gray-200 hover:border-primary hover:bg-blue-50'
-                      }`}
+                    className={`flex items-center p-4 border-2 rounded-xl cursor-pointer transition duration-200 ${
+                      isCorrect
+                        ? 'border-success bg-green-50'
+                        : isWrong
+                          ? 'border-red-500 bg-red-50'
+                          : isSelected
+                            ? 'border-primary bg-blue-50'
+                            : 'border-gray-200 hover:border-primary hover:bg-blue-50'
+                    }`}
                   >
                     <RadioGroupItem
                       value={index.toString()}
@@ -63,14 +62,17 @@ export default function QuizQuestion({
                             : 'text-primary border-primary'
                       }
                     />
-                    <span className={`ml-4 ${isCorrect
-                      ? 'text-green-800 font-medium'
-                      : isWrong
-                        ? 'text-red-800'
-                        : isSelected
-                          ? 'text-primary font-medium'
-                          : 'text-gray-900'
-                      }`}>
+                    <span
+                      className={`ml-4 ${
+                        isCorrect
+                          ? 'text-green-800 font-medium'
+                          : isWrong
+                            ? 'text-red-800'
+                            : isSelected
+                              ? 'text-primary font-medium'
+                              : 'text-gray-900'
+                      }`}
+                    >
                       {option}
                     </span>
                   </Label>
