@@ -45,13 +45,43 @@ function Calendar({ className, classNames, showOutsideDays = true, ...props }: C
         ...classNames,
       }}
       components={{
-        IconLeft: ({ className, ...props }) => (
-          <ChevronLeft className={cn('h-4 w-4', className)} {...props} />
-        ),
-        IconRight: ({ className, ...props }) => (
-          <ChevronRight className={cn('h-4 w-4', className)} {...props} />
+        Nav: ({ previousMonth, nextMonth, onPreviousClick, onNextClick }) => (
+          <div className="space-x-1 flex items-center absolute right-1">
+            {previousMonth && (
+              <button
+                type="button"
+                onClick={onPreviousClick}
+                className={cn(
+                  buttonVariants({ variant: 'outline' }),
+                  'h-7 w-7 bg-transparent p-0 opacity-50 hover:opacity-100',
+                )}
+              >
+                <ChevronLeft className="h-4 w-4" />
+              </button>
+            )}
+            {nextMonth && (
+              <button
+                type="button"
+                onClick={onNextClick}
+                className={cn(
+                  buttonVariants({ variant: 'outline' }),
+                  'h-7 w-7 bg-transparent p-0 opacity-50 hover:opacity-100',
+                )}
+              >
+                <ChevronRight className="h-4 w-4" />
+              </button>
+            )}
+          </div>
         ),
       }}
+      // components={{
+      //   IconLeft: ({ className, ...props }) => (
+      //     <ChevronLeft className={cn('h-4 w-4', className)} {...props} />
+      //   ),
+      //   IconRight: ({ className, ...props }) => (
+      //     <ChevronRight className={cn('h-4 w-4', className)} {...props} />
+      //   ),
+      // }}
       {...props}
     />
   );

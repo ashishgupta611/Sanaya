@@ -1,6 +1,6 @@
 import { Card, CardContent } from "@/src/components/ui/card";
 import { Code, TrendingUp, Palette, Megaphone, Camera, Languages, BookOpen } from "lucide-react";
-import { Link } from "wouter";
+import Link from 'next/link';
 
 interface CategoryCardProps {
   category: {
